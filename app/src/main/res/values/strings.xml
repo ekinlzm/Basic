@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tnt Basic</string>
+    <string name="input_valid_phone">请输入正确的手机号码</string>
+</resources>
