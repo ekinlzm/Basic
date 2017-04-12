@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Tnt Basic</string>
     <string name="input_valid_phone">请输入正确的手机号码</string>
+    <string name="string_format_test">请输入%1$d位手机号码，%2$70s</string>
+    <string name="title_activity_chat_list">ChatListActivity</string>
+
 </resources>

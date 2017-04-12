@@ -37,9 +37,12 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.tinnotech.action.BOOK_SER" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".ChatListActivity"></activity>
     </application>
 
 </manifest>

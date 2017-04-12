@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     */
-
+                    /*
                     if(mServer != null) {
                         mBookIndex ++;
                         Log.e("LZM", "clent send msg: " + mBookIndex);
@@ -68,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
                         } catch (RemoteException e){
                         }
                     }
+                    */
+                    startActivity(new Intent(MainActivity.this, ChatListActivity.class));
                 }
             }
         });
@@ -80,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent("com.tinnotech.action.BOOK_SER");
             intent.setPackage("com.tinnotech.basic");
             bindService(intent, mServerConn, Service.BIND_AUTO_CREATE);
+
         }
     }
 
