@@ -17,11 +17,10 @@ import java.util.zip.Inflater;
 
 public class ChatListItemAdapter extends BaseAdapter{
     private List<ChatListItemBean> mData;
-    private LayoutInflater mInflater;
 
-    public ChatListItemAdapter(Context context, List<ChatListItemBean> data) {
+
+    public ChatListItemAdapter(List<ChatListItemBean> data) {
         mData = data;
-        mInflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -52,14 +51,15 @@ public class ChatListItemAdapter extends BaseAdapter{
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHoder viewHoder;
+        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         if(view == null){
             viewHoder = new ViewHoder();
             if(getItemViewType(i) == 0){
-                view = mInflater.inflate(R.layout.chat_item_in, null);
+                view = inflater.inflate(R.layout.chat_item_in, null);
                 viewHoder.icon = (ImageView)view.findViewById(R.id.icon_in);
                 viewHoder.text = (TextView)view.findViewById(R.id.text_in);
             }else{
-                view = mInflater.inflate(R.layout.chat_item_out, null);
+                view = inflater.inflate(R.layout.chat_item_out, null);
                 viewHoder.icon = (ImageView)view.findViewById(R.id.icon_out);
                 viewHoder.text = (TextView)view.findViewById(R.id.text_out);
             }

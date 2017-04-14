@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*
         TntApp tnt_app = (TntApp)getApplicationContext();
         SharedPreferences sp = getSharedPreferences(TntConstants.TNT_SP_FILE_NAME, Context.MODE_PRIVATE);
         String token = sp.getString("token", "");
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, MemberCheckActivity.class));
             return;
         }
+        */
         Button btn = (Button)findViewById(R.id.test_button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        startActivity(new Intent(this, TestActivity.class));
     }
 
     @Override

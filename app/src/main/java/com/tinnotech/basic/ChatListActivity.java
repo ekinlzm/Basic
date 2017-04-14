@@ -1,6 +1,7 @@
 package com.tinnotech.basic;
 
 import android.graphics.BitmapFactory;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -27,7 +28,6 @@ public class ChatListActivity extends AppCompatActivity {
         mData.add(new ChatListItemBean(BitmapFactory.decodeResource(getResources(),
                 R.drawable.in_icon), "Bye bye", 1));
 
-       mlistview.setAdapter(new ChatListItemAdapter(ChatListActivity.this, mData));
-
+        mlistview.setAdapter(new ChatListItemAdapter(mData));
     }
 }
