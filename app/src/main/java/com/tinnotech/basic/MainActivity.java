@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if(mBinded){
                    /*
                     if(mBookManager != null)
@@ -71,13 +73,29 @@ public class MainActivity extends AppCompatActivity {
                         } catch (RemoteException e){
                         }
                     }
-                    */
                     startActivity(new Intent(MainActivity.this, ChatListActivity.class));
+                    */
+                }
+                View view_test = (View)findViewById(R.id.test_viewstub);
+                View view_test2 = (View)findViewById(R.id.test_inflate);
+                if(view_test != null){
+                    Log.i("LZM", "11111111111111111111111");
+                    //view_test.setVisibility(View.VISIBLE);
+                    ((ViewStub)view_test).inflate();
+                }
+                else{
+                    Log.i("LZM", "222222222222222");
+                }
+
+                if(view_test2 != null){
+                    Log.i("LZM", "33333333333333");
+
+                }
+                else{
+                    Log.i("LZM", "44444444");
                 }
             }
         });
-
-        startActivity(new Intent(this, TestActivity.class));
     }
 
     @Override
@@ -87,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent("com.tinnotech.action.BOOK_SER");
             intent.setPackage("com.tinnotech.basic");
             bindService(intent, mServerConn, Service.BIND_AUTO_CREATE);
-
         }
     }
 
@@ -128,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
             }
             */
             mServer = new Messenger(iBinder);
+
+            startActivity(new Intent(MainActivity.this, TestActivity.class));
         };
 
         @Override
